@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+      <div class="top">
+        <div>微信</div>
+        <div>
+        <span>
+        <img class="icon" src="./images/search.svg"></div>
+        <div>+</div>
+        </span>
+      </div>
+      <ul class="chat-list">
+          <li>
+
+            <div class="chatbox">
+              <img class="big-icon" src="./images/file.svg">
+              <div class="chat-content" >
+                <div class="name">文件传输助手</div>
+                <div class="message">https://zhuanlan.zhihu.com/p/416873135</div>
+                <div class="time">下午2:09</div>
+              </div>
+            </div>
+          </li>
+          <li>
+
+            <div class="chatbox">
+              <div><img class="big-icon" src="./images/boss.webp">
+                
+              </div>
+              <div class="chat-content" >
+                <div class="name">BOSS直聘APP</div>
+                <div class="message">你的期望薪资是多少</div>
+                <div class="time">上午10:08</div>
+              </div>
+            </div>
+          </li>
+      </ul>
+      
+      <div class="contect-list hide">
+       <div class="side-nav">
+        <ol>
+          <li>
+
+          </li>
+          <li>
+            <img src="./images/star.svg">
+          </li>
+          <li>
+            A
+          </li>
+          <li>
+            B
+          </li>
+        </ol>
+        </div>
+      </div>
+
+
+    <nav class="navbar">    
+     <ol class="navlist">
+      <li class="wechat">
+        <img class="icon" src="./images/weixin.svg">
+        <div>微信</div>
+      </li>
+      <li class="addressBook">
+        <img class="icon" src="./images/tel.svg">
+        <div>通讯录</div>
+      </li>
+      <li>
+        <img class="icon" src="./images/find.svg">
+        <div>发现</div>
+      </li>
+      <li>
+        <img class="icon" src="./images/person.svg">
+        <div>我</div>
+      </li>
+     </ol>
+    </nav>
+
+  </div>
+  <style>
+    .hide{
+      display: none;
+    }
+    .top{
+      background: #eee;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      border: 1px solid khaki;
+    }
+    .wrapper{
+      width: 100vw;
+    }
+   .navlist{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+     position: fixed;
+     bottom: 0;
+     font-size: 16px;
+     border: 1px solid yellow;
+     background:  white;
+   }
+    
+   .icon{
+    width: 1.5em;
+   }
+  .big-icon{
+    width: 2.4em;
+  }
+
+  .chatbox{
+    display: flex;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    padding: 8px;
+  }
+  .chat-content{
+    position: relative;
+    flex-grow: 1;
+    margin-left: 5px;
+  }
+
+  .time{
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    font-size: 8px;
+    color: #7c7c7c;
+  }
+  .name{
+    font-size: 16px;
+  }
+  .message{
+    font-size: 8px;
+    color: #3e3e3e;
+  }
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ol, ul{
+      list-style: none;
+    }
+
+    .contect-list{
+      position: relative;
+    }
+
+    .side-nav{
+      position: absolute;
+      right: 0;
+    }
+  </style>
+
+  <script>
+     const addressBook = document.querySelector(".addressBook");
+     const chatList = document.querySelector(".chat-list");
+     const weichat = document.querySelector(".wechat");
+     const contectList = document.querySelector(".contect-list");
+
+     weichat.addEventListener("click", ()=>{
+      chatList.classList.remove("hide");
+      contectList.classList.add("hide");
+     })
+
+     addressBook.addEventListener("click", ()=>{
+    chatList.classList.add("hide");
+    contectList.classList.remove("hide");
+  })
+
+
+  </script>
+</body>
+</html>
