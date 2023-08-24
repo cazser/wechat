@@ -7,13 +7,17 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="outer-top">
       <div class="top">
-        <div>微信</div>
-        <div>
-        <span>
-        <img class="icon" src="./images/search.svg"></div>
-        <div>+</div>
-        </span>
+          <div>微信</div>
+        
+        <div class="top-right">
+        <div class="search">
+          <img class="icon" src="./images/search.svg">
+        </div>
+        <div><img class="icon" src="./images/addition.svg"></div>
+       </div>
+      </div>
       </div>
       <ul class="chat-list">
           <li>
@@ -330,11 +334,21 @@
       </div>
 
       <div class="find-list hide">
-        <ol>
-          <li>
-            发现
+         <ol>
+
+
+          <li class="addressItem">
+            <div class="face">
+               <img class="big-icon" src="./images/006i2bK8jw8fd1svyar6zj30ro0rpmzs.jpg">
+            </div>
+            <div class="name">朋友圈</div>
           </li>
-        </ol>
+          <li class="addressItem">
+            <div class="face">
+               <img class="big-icon" src="./images/lvbu.webp">
+            </div>
+            <div class="name">视频号</div>
+          </li>
       </div>
 
       <div class="my-page hide">
@@ -369,8 +383,11 @@
     .top{
       background: #eee;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
       width: 100%;
+     position: relative;
+     padding: 12px;
     }
     .wrapper{
       width: 100vw;
@@ -457,7 +474,17 @@
       border-radius: 5px;
     }
 
-    
+    .top-right{
+      position: absolute;
+      top:12px;
+      right: 12px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .search{
+      margin-right: 24px;
+    }
   </style>
 
   <script>
@@ -469,11 +496,13 @@
      const findList = document.querySelector(".find-list");
   const me = document.querySelector(".me");
      const mypage = document.querySelector(".my-page");
+     const top1 = document.querySelector(".outer-top");
      weichat.addEventListener("click", ()=>{
       chatList.classList.remove("hide");
       contectList.classList.add("hide");
       findList.classList.add("hide");
        mypage.classList.add("hide");
+        top1.classList.remove("hide");
      })
 
      addressBook.addEventListener("click", ()=>{
@@ -481,6 +510,7 @@
     contectList.classList.remove("hide");
     findList.classList.add("hide");
      mypage.classList.add("hide");
+     top1.classList.remove("hide");
   })
 
   find.addEventListener("click", ()=>{
@@ -488,6 +518,7 @@
     contectList.classList.add("hide");
     findList.classList.remove("hide");
      mypage.classList.add("hide");
+     top1.classList.remove("hide");
   })
 
   me.addEventListener("click", ()=>{
@@ -495,6 +526,7 @@
     contectList.classList.add("hide");
     findList.classList.add("hide");
      mypage.classList.remove("hide");
+     top1.classList.add("hide");
   })
 
 
